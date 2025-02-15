@@ -7,11 +7,17 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// ✅ Add a test route to verify if your server is running
+app.get("/", (req, res) => {
+    res.send("My-GPT backend is running! ✅");
+});
+
+// ✅ Main Chat Route
 app.post("/chat", async (req, res) => {
     try {
         const userMessage = req.body.message;
 
-        const response = await fetch("https://mygptbackend.onrender.com/chat", {
+        const response = await fetch("https://api.openai.com/v1/chat/completions", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -28,6 +34,7 @@ app.post("/chat", async (req, res) => {
         res.json({ response: data.choices[0].message.content });
 
     } catch (error) {
+        console.error("Error:", error);
         res.status(500).json({ error: "Error fetching response" });
     }
 });
