@@ -5,7 +5,7 @@ require("dotenv").config();
 
 const app = express();
 app.use(cors());
-app.use(express.json());
+app.use(express.json()); // ✅ Ensures JSON is properly parsed
 
 // ✅ Homepage Route (Fixes "Cannot GET /")
 app.get("/", (req, res) => {
@@ -15,11 +15,12 @@ app.get("/", (req, res) => {
 // ✅ Chat Route (Handles GPT requests)
 app.post("/chat", async (req, res) => {
     try {
-        const userMessage = req.body.message;
-
-        if (!userMessage) {
+        // ✅ Check if a message was sent in the request
+        if (!req.body || !req.body.message) {
             return res.status(400).json({ error: "Message is required" });
         }
+
+        const userMessage = req.body.message;
 
         const response = await fetch("https://api.openai.com/v1/chat/completions", {
             method: "POST",
@@ -35,7 +36,8 @@ app.post("/chat", async (req, res) => {
         });
 
         const data = await response.json();
-        
+
+        // ✅ Handle possible API response errors
         if (!data.choices || data.choices.length === 0) {
             return res.status(500).json({ error: "Invalid response from OpenAI" });
         }
@@ -48,7 +50,6 @@ app.post("/chat", async (req, res) => {
     }
 });
 
-// ✅ Set Server Port
+// ✅ Start the server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
