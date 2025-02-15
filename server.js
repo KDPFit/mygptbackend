@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 app.use(express.json()); // ✅ Ensures JSON is properly parsed
 
-// ✅ Homepage Route (Fixes "Cannot GET /")
+// ✅ Homepage Route (Confirms server is running)
 app.get("/", (req, res) => {
     res.send("My-GPT backend is running! ✅");
 });
@@ -15,6 +15,8 @@ app.get("/", (req, res) => {
 // ✅ Chat Route (Handles GPT requests)
 app.post("/chat", async (req, res) => {
     try {
+        console.log("Received request:", req.body); // ✅ Logs the incoming request for debugging
+
         // ✅ Check if a message was sent in the request
         if (!req.body || !req.body.message) {
             return res.status(400).json({ error: "Message is required" });
