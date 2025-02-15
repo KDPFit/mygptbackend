@@ -7,15 +7,19 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// ✅ Add a test route to verify if your server is running
+// ✅ Homepage Route (Fixes "Cannot GET /")
 app.get("/", (req, res) => {
     res.send("My-GPT backend is running! ✅");
 });
 
-// ✅ Main Chat Route
+// ✅ Chat Route (Handles GPT requests)
 app.post("/chat", async (req, res) => {
     try {
         const userMessage = req.body.message;
+
+        if (!userMessage) {
+            return res.status(400).json({ error: "Message is required" });
+        }
 
         const response = await fetch("https://api.openai.com/v1/chat/completions", {
             method: "POST",
@@ -31,13 +35,20 @@ app.post("/chat", async (req, res) => {
         });
 
         const data = await response.json();
+        
+        if (!data.choices || data.choices.length === 0) {
+            return res.status(500).json({ error: "Invalid response from OpenAI" });
+        }
+
         res.json({ response: data.choices[0].message.content });
 
     } catch (error) {
         console.error("Error:", error);
-        res.status(500).json({ error: "Error fetching response" });
+        res.status(500).json({ error: "Error fetching response from OpenAI" });
     }
 });
 
+// ✅ Set Server Port
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
