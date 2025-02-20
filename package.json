@@ -1,15 +1,13 @@
-{
-  "name": "my-gpt-backend",
-  "version": "1.0.0",
-  "description": "Backend for My-GPT Chat",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-  },
-  "dependencies": {
-    "express": "^4.18.2",
-    "cors": "^2.8.5",
-    "node-fetch": "^2.6.7",
-    "dotenv": "^16.3.1"
-  }
+"type": "service_account",
+  "project_id": "clients-infinity-api",
+  "private_key_id": "a05a15c6806633b2643090ff3b8395bd3b866bdc",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC1BKryKYRCOotZ\nVlNLs1k3N/Of026Ou04RKQOsPGzBbzx34MKbvKV0i+Dq2mqe+lR8zft1rJEzkpy0\narphYJjIklmiHpZ10ZKyoijzo9np+gfbFZ2HvncZlqmFLBM/LlXwQ4AxyICvmHSW\nppl2q3c97T54HOHy7WvJUc9TGwukt1RoIWEfVuotnEk9bf8b+loSIii9gMF52bj2\ng9MMj45yFJU54BGhjt+a9XbbFjomsac+mRFitqzVrduD5+3OPANtf6+O1iT70u1X\nCBPvJPKYlI0qn01qTHcza/Uf99KGjeHapqDdZeEJeJde3Tyjc6Mi065Pj5ffKFtD\nmeU/cQyvAgMBAAECggEAG2qXkZHkLDu9u0wt1XtWedyJk51sU0XfLw4tNjr4pdt5\nJxbtorTRwnMlH6zxFR8JCNYRzeLTIyKDhXfcvr7opQg1dy52z2VseI3C8hPQ/3UV\nF4OQlmyskT2Wc0sXpywXbAptMh0SEIZgsiiNecHCj6iNG5gUSLzY5Gb1pbqk6s9v\n358q5k4GwmRGUpsIkRMsd8PAu7UV9zX88QIp+oAZ9IsaYmzK3BdC+gqThpj7kOgV\nQ9yPiiY4IJez/subGSnchH3cOcjOy8U7XdfIrsb7e6H1hwAYJ6aUtlL0W94w5hR+\nvzfQ9ezi75NY+RtQdDmsxOce0y20ABfc4yAaQkYasQKBgQDxeRKwW+ybu/bMPmmT\n0vZ+pkMHFjDIwEg9xIBDy2prQBIV7pAcewFqm/pF2/DIhoRtrJ/L4qUSwU09wN08\nJkbAH/F3x+C1bfKmQDNydGOSlWcBSK23jt93LxQHtEJ1vICHZ4s5uPn7UGsQCG8z\nv+VdMKqRdWo0+FfE2EX3U6rQgwKBgQC/6If/SMgbKTL1XXrfPPOe5E8ncdOrCQFb\npzsJOmLED+MPX8KJ/hwAVhAKpCSdRERhcb1ZV0Ya27GIZOpa4DV9h5NBH2ULKUqB\ntblh0C7tiWhsPP7CsC5sDqsccSlz/nmM52jFVk4PmGTyDGcVICky8u/qZcObzS6l\ntqnG95PDZQKBgQDbONnYtnvGnwzePENJaxtRu8vaYTEE8Fwlh4ITCleg6tgAhUbc\nNGgCy3yZc6XTxxvvHestBKRstIVVbQTtGKrevaFQ52uAC0Nh36NVY4kKiQysw7jC\njrkd0OXUYLh9fxcI1t41F1QL7uRj9+RNDQhEZGxWBkzXriawlNBgS9sl1QKBgG7x\nP8XOTpidHa+JZiIuO2ys8jGMdWCYKSfSKqfwD+7mfE6D/pQFyixLlKSCNgSQ1bM7\nrMo8UPPv89c09+KnYWT7fp6URrbIHSGVa+FnF+oMmMiSDnmAnqWraTJdHSjIgX56\nvS/v79rGL/1aPDGTUR36IcZxJD8qw//a9JVoxQydAoGBALRdx1eanJY0zOgihOOj\n1btQ0tnMGSL7wdVWcWKifSFQAe8RfDVrhVrpx6DQyggftgAqXpDGHz1zsdAPWOIf\nuhek8RiHZIoyFZ5XMCOTgtUXyqHuIfJp1HMbTO95uH/n4/RRJcjKbj0Vb26gImiF\ngPPoTLo2WrVQJZ9fEcHpRwy8\n-----END PRIVATE KEY-----\n",
+  "client_email": "gpt-sheets-bot@clients-infinity-api.iam.gserviceaccount.com",
+  "client_id": "117659601680602201437",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/gpt-sheets-bot%40clients-infinity-api.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
 }
+
